@@ -1,27 +1,37 @@
+<!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <title>STL Daily Gardener</title>
+    <meta content="width=device-width,maximum-scale=1.0,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes" name="viewport">
+    </head>
 
-<body>
+  <body>
 
-
-<header style="margin-top: 5px;">
+<header class=topPage>
+  <div class=pageLogo>
+    <img src="/images/gardenlogo.jpg" alt="STL Daily Gardener logo">
+  </div>
   <nav>
     <div class="nav-wrapper">
       <ul>
-        <li routerLinkActive="green-background">
-          <a [routerLink]="'/homepage'">Home</a></li>
-        <li routerLinkActive="green-background">
+        <li>
+          <a routerLink="/home">Home Page</a></li>
+        <li>
           <a routerLink="/monthlytips">Monthly Tips</a></li>
-        <li routerLinkActive="green-background">
+        <li>
           <a routerLink="/blog">Garden Blog</a></li>
       </ul>
     </div>
   </nav>
-  <h1>The STL Daily Gardener</h1>
 </header>
+
+<div class=titleHero> <h1>STL Daily Gardener</h1></div>
+
 <div>
   <router-outlet></router-outlet>
 </div>
 <footer>Copyright Marla Productions 2018</footer>
 </body>
 </html>
+
