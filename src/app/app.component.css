@@ -2,24 +2,32 @@ body{
   width: 100%;
   margin: 0px;
   padding: 0px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .topPage{
   display: flex;
   flex-flow: row;
   margin: 0px;
-  padding: 30px;
+  padding: 0px;
+}
+
+.pageLogoWrapper{
+  width: 40%;
+  text-align: left;
 }
 
 .pageLogo{
-  width: 40%;
-  text-align: center;
+  width:120px;
+  height: auto;
+  padding-left: 10%;
 }
+
 nav {
   background-color: white;
   padding: 0px;
   margin: 0px;
-  width: 60%;
+  width: 100%;
+
 }
 
 
@@ -31,21 +39,35 @@ nav ul{
   justify-content: space-between;
   list-style: none;
   margin: 0px;
+  padding-top: 60px;
 }
 
 nav li a {
+  font-size: 16px;
   text-decoration: none;
   padding-right: 30px;
-  padding-bottom: 50px;
+}
+
+nav li a:hover {
+  color: #3B5F4B;
+  text-decoration: #3B5F4B;
+  font-size: 18px;
+  text-decoration: underline;
 }
 
 .titleHero {
+  text-transform: uppercase;
+  font-size: 22px;
   letter-spacing: 14px;
-  padding: 50px;
-  height: 100px;
+  text-shadow: -2px 4px #3B5F4B;
+  padding-top: 90px;
+  height: 200px;
   color: #FFFFFF;
   text-align: center;
-  background-color: #3B5F4B;
+  min-width: 100%;
+  background: url("/assets/images/cabbage.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 footer{
