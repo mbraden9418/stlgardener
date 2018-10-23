@@ -12,6 +12,32 @@
   If you live in plant hardiness zone 6b, formerly 6a, these daily tips are for you.  If you live in another zone, adjust accordingly.
 Find out your plant hardiness zone on this <a href="https://planthardiness.ars.usda.gov/PHZMWeb/#">interactive map </a> from OSU and the USDA, as many zones have recently changed.</h1>
 
-<h2 class= dateIntro>Today, {{todaysDate | date: 'longDate'}}, in your STL garden: </h2>
+<div class= homeWrapper>
+
+<div class= weatherDiv>
+  <div class= transBox>
+    <h2 >{{todaysDate | date: 'longDate'}} in the STL garden: </h2>
+  <ul class="weatherData">
+      <li class="weatherInfoPoint" *ngFor="let weather of (weathers | async)">
+        {{weather.temperature }} and {{weather.summary}}
+      </li>
+     <li>67 degrees Fahrenheit</li>
+     <li>Light rain</li>
+     <li>Probably won't need to water today!</li>
+     <li>Warm enough to open greenhouse</li>
+     <li>No weather advisory</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class= tasksDiv>
+  <div class= transBox>
+<h2>This Week's {{thisMonth}} Tasks:</h2>
+  </div>
+</div>
+
+</div>
+
 </body>
 </html>
