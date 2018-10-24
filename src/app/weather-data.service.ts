@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-const API_URL = 'https://api.darksky.net/forecast/f304bfe4a78889904fb6bf0126c664a9//38.627003,-90.199402';
+const API_URL = 'https://api.darksky.net/forecast/f304bfe4a78889904fb6bf0126c664a9/38.627003,-90.199402';
 
 export interface Weather {
     latitude: string;
@@ -41,8 +41,9 @@ export interface Currently {
 export class WeatherDataService {
 
   constructor(private http: HttpClient) { }
+
   loadWeather(): Observable<Weather[]> {
-    return this.http.get<Weather[]>(API_URL);
+    return this.http.get<Weather[]>(API_URL );
   }
 }
 

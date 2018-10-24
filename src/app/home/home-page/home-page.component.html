@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1 class= intro>Welcome! Here you will find all of your daily Saint Louis region gardening advice:
+<h1 class= intro>Welcome! Here you will find all of your daily Saint Louis, Missouri regional gardening advice:
   If you live in plant hardiness zone 6b, formerly 6a, these daily tips are for you.  If you live in another zone, adjust accordingly.
 Find out your plant hardiness zone on this <a href="https://planthardiness.ars.usda.gov/PHZMWeb/#">interactive map </a> from OSU and the USDA, as many zones have recently changed.</h1>
 
@@ -16,10 +16,10 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
 
 <div class= weatherDiv>
   <div class= transBox>
-    <h2 >{{todaysDate | date: 'longDate'}} in the STL garden: </h2>
+    <h2 >{{todaysDate | date: 'longDate'}} in your garden: </h2>
   <ul class="weatherData">
-      <li class="weatherInfoPoint" *ngFor="let weather of (weathers | async)">
-        {{weather.temperature }} and {{weather.summary}}
+      <li class="weatherInfoPoint" *ngFor="let weather of (weather | async)">
+        {{weather.timezone }} and {{weather.latitude}}
       </li>
      <li>67 degrees Fahrenheit</li>
      <li>Light rain</li>
@@ -33,7 +33,7 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
 
 <div class= tasksDiv>
   <div class= transBox>
-<h2>This Week's {{thisMonth}} Tasks:</h2>
+<h2>{{todaysDate | date: 'MMMM'}} Week {{todaysDate | date: 'W'}} Garden Tasks:</h2>
   </div>
 </div>
 

@@ -9,22 +9,23 @@ import {WeatherDataService, Weather} from '../.././weather-data.service';
 })
 
 
+
 export class HomePageComponent implements OnInit {
 
+  monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'];
+
   todaysDate = new Date();
-  Month = '';
+  Month =  this.monthNames[this.todaysDate.getMonth()];
 
+/*
+  weather: Observable<Weather[]>;
 
-  weathers: Observable<Weather[]>;
-
-  /*constructor(svc: WeatherDataService) {
-    this.weathers = svc.loadWeather();
+  constructor(svc: WeatherDataService) {
+    this.weather = svc.loadWeather();
   }
 */
   ngOnInit() {
   }
 
 }
-
-
-
