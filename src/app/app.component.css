@@ -58,7 +58,7 @@ nav li a:hover {
 
 .titleHero {
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 25px;
   letter-spacing: 14px;
   text-shadow: -2px 4px #3B5F4B;
   padding-top: 90px;
@@ -74,7 +74,7 @@ nav li a:hover {
 footer{
   color: #FFFFFF;
   text-align: center;
-  background-color: #3B5F4B;
-  padding: 30px;
-  letter-spacing: 8px;
+  background-color: rgb(123, 167, 142);
+  padding: 50px;
+  /*letter-spacing: 6px;*/
 }

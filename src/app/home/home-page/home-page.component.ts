@@ -16,16 +16,29 @@ export class HomePageComponent implements OnInit {
   'July', 'August', 'September', 'October', 'November', 'December'];
 
   todaysDate = new Date();
+
   Month =  this.monthNames[this.todaysDate.getMonth()];
 
-/*
-  weather: Observable<Weather[]>;
+  tempMessage = 'string';
+
+  weather: Observable<Weather>;
 
   constructor(svc: WeatherDataService) {
     this.weather = svc.loadWeather();
   }
-*/
+
   ngOnInit() {
   }
+
+  temperatureAdvice(temperature: number) {
+    if (temperature < 50) {
+      this.tempMessage = 'Wear a jacket, stay warm!';
+    } else if (temperature < 80) {
+      this.tempMessage = 'Enjoy the comfortable gardening temperature';
+    } else if (temperature >= 80) {
+      this.tempMessage = 'It is hot out there! Make sure you stay hydrated, and your garden too!';
+    }
+  }
+
 
 }

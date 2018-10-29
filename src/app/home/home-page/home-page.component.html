@@ -17,15 +17,16 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
 <div class= weatherDiv>
   <div class= transBox>
     <h2 >{{todaysDate | date: 'longDate'}} in your garden: </h2>
-  <ul class="weatherData">
-      <li class="weatherInfoPoint" *ngFor="let weather of (weather | async)">
-        {{weather.timezone }} and {{weather.latitude}}
+  <ul class=weatherData>
+      <li class=currentWeatherInfo>
+        <span class= weatherInfoSpan> Currently: </span>{{(weather | async ).currently.temperature}} &#8457;
+        and {{(weather | async ).currently.summary }}
       </li>
-     <li>67 degrees Fahrenheit</li>
-     <li>Light rain</li>
-     <li>Probably won't need to water today!</li>
-     <li>Warm enough to open greenhouse</li>
-     <li>No weather advisory</li>
+     <li><span class= weatherInfoSpan> Today's UV Index: </span>{{(weather | async ).daily.data[0].uvIndex}} </li>
+     <li><span class= weatherInfoSpan> Next 24 Hours: </span>{{(weather | async ).hourly.summary}} </li>
+     <li><span class= weatherInfoSpan> Next 7 days: </span>{{(weather | async ).daily.summary }} </li>
+     <li><span class= weatherInfoSpan> Moon Phase: </span>{{(weather | async ).daily.data[0].moonPhase }} </li>
+    <li>{{temperatureAdvice(55)}}</li>
     </ul>
   </div>
 
@@ -38,6 +39,8 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
 </div>
 
 </div>
+
+<div class= gardenQuotesDiv>A garden is always a series of losses set against a few triumphs, like life itself. – May Sarton</div>
 
 </body>
 </html>
