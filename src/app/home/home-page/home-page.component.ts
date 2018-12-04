@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {WeatherDataService, Weather} from '../.././weather-data.service';
+import {gardenQuotes} from '../gardenQuotes';
 
 @Component({
   selector: 'sg-home-page',
@@ -19,7 +20,9 @@ export class HomePageComponent implements OnInit {
 
   Month =  this.monthNames[this.todaysDate.getMonth()];
 
-  tempMessage = 'string';
+  week = Math.floor(this.todaysDate.getDate() / 7 ) + 1 ;
+
+  gardenQuote = gardenQuotes[Math.floor((Math.random() * gardenQuotes.length))];
 
   weather: Observable<Weather>;
 
@@ -30,15 +33,26 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
+
   temperatureAdvice(temperature: number) {
     if (temperature < 50) {
-      this.tempMessage = 'Wear a jacket, stay warm!';
+      return 'Keep your greenhouse warm or bring plants inside!';
     } else if (temperature < 80) {
-      this.tempMessage = 'Enjoy the comfortable gardening temperature';
-    } else if (temperature >= 80) {
-      this.tempMessage = 'It is hot out there! Make sure you stay hydrated, and your garden too!';
+      return 'Enjoy the comfortable gardening temperature';
+    } else {
+      return 'It is hot out there- make sure you water your garden well!';
     }
   }
 
+  uvAdvice(uvIndex: number) {
+    if (uvIndex < 3) {
+      return 'Not so sunny';
+    } else if (uvIndex < 6) {
+      return 'Wear SPF 30 and a hat';
+    } else {
+      return 'Wear protection; stay out of the sun from 10 a.m. to 4 p.m.! Consider shade cloths for sensitive or newly transplanted plants';
+    }
+  }
 
 }
+

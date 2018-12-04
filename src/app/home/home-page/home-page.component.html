@@ -19,14 +19,13 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
     <h2 >{{todaysDate | date: 'longDate'}} in your garden: </h2>
   <ul class=weatherData>
       <li class=currentWeatherInfo>
-        <span class= weatherInfoSpan> Currently: </span>{{(weather | async ).currently.temperature}} &#8457;
-        and {{(weather | async ).currently.summary }}
+        <span class= weatherInfoSpan>Currently:</span> {{(weather | async )?.currently.temperature}} &#8457;
+        and {{(weather | async )?.currently.summary }}... {{temperatureAdvice((weather | async )?.currently.temperature)}}
       </li>
-     <li><span class= weatherInfoSpan> Today's UV Index: </span>{{(weather | async ).daily.data[0].uvIndex}} </li>
-     <li><span class= weatherInfoSpan> Next 24 Hours: </span>{{(weather | async ).hourly.summary}} </li>
-     <li><span class= weatherInfoSpan> Next 7 days: </span>{{(weather | async ).daily.summary }} </li>
-     <li><span class= weatherInfoSpan> Moon Phase: </span>{{(weather | async ).daily.data[0].moonPhase }} </li>
-    <li>{{temperatureAdvice(55)}}</li>
+     <li><span class= weatherInfoSpan> Today's UV Index: </span>{{(weather | async )?.daily.data[0].uvIndex}}... {{uvAdvice((weather | async )?.daily.data[0].uvIndex)}} </li>
+     <li><span class= weatherInfoSpan> Next 24 Hours: </span>{{(weather | async )?.hourly.summary}} </li>
+     <li><span class= weatherInfoSpan> Next 7 days: </span>{{(weather | async )?.daily.summary }} </li>
+     <li><span class= weatherInfoSpan> Moon Phase: </span>{{(weather | async )?.daily.data[0].moonPhase }} </li>
     </ul>
   </div>
 
@@ -34,13 +33,27 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
 
 <div class= tasksDiv>
   <div class= transBox>
-<h2>{{todaysDate | date: 'MMMM'}} Week {{todaysDate | date: 'W'}} Garden Tasks:</h2>
+<h2>{{todaysDate | date: 'MMMM'}} Week {{week}} Garden Tasks:</h2>
   </div>
 </div>
 
 </div>
 
-<div class= gardenQuotesDiv>A garden is always a series of losses set against a few triumphs, like life itself. – May Sarton</div>
+<div class="slider-wrap">
+<p class= gardenQuotesDiv>{{gardenQuote}}</p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
+  <script>
+
+      $(document).ready(function(){
+        $('.slider-wrap').slick({
+        infinite: true,
+        slidesToShow: 1
+      });
+  });
+
+    </script>
 </body>
 </html>

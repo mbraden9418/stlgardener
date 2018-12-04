@@ -47,6 +47,7 @@ nav li a {
   font-size: 16px;
   text-decoration: none;
   padding-right: 100px;
+  transition: .2s ease-in all;
 }
 
 nav li a:hover {
@@ -76,5 +77,4 @@ footer{
   text-align: center;
   background-color: rgb(123, 167, 142);
   padding: 50px;
-  /*letter-spacing: 6px;*/
 }
