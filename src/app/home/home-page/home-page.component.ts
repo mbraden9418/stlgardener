@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {WeatherDataService, Weather} from '../.././weather-data.service';
-import {gardenQuotes} from '../gardenQuotes';
+import {gardenQuotes} from '../garden-quotes';
+import {monthlyTips} from '../monthly-tips';
 
 @Component({
   selector: 'sg-home-page',
@@ -22,7 +23,9 @@ export class HomePageComponent implements OnInit {
 
   week = Math.floor(this.todaysDate.getDate() / 7 ) + 1 ;
 
-  gardenQuote = gardenQuotes[Math.floor((Math.random() * gardenQuotes.length))];
+  gardenQuote = gardenQuotes[Math.floor(Math.random() * gardenQuotes.length)];
+
+  weeklyTip = monthlyTips;
 
   weather: Observable<Weather>;
 
