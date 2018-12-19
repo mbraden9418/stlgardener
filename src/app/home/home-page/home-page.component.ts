@@ -4,6 +4,7 @@ import {WeatherDataService, Weather} from '../.././weather-data.service';
 import {gardenQuotes} from '../garden-quotes';
 import {monthlyTips} from '../monthly-tips';
 
+
 @Component({
   selector: 'sg-home-page',
   templateUrl: './home-page.component.html',
@@ -14,18 +15,18 @@ import {monthlyTips} from '../monthly-tips';
 
 export class HomePageComponent implements OnInit {
 
-  monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'];
+  monthNames = ['january', 'february', 'march', 'april', 'may', 'june',
+  'july', 'august', 'september', 'october', 'november', 'december'];
 
   todaysDate = new Date();
 
-  Month =  this.monthNames[this.todaysDate.getMonth()];
+  month =  this.monthNames[this.todaysDate.getMonth()];
 
   week = Math.floor(this.todaysDate.getDate() / 7 ) + 1 ;
 
   gardenQuote = gardenQuotes[Math.floor(Math.random() * gardenQuotes.length)];
 
-  weeklyTip = monthlyTips;
+  weeklyTip = monthlyTips[this.month][this.week];
 
   weather: Observable<Weather>;
 
@@ -53,7 +54,10 @@ export class HomePageComponent implements OnInit {
     } else if (uvIndex < 6) {
       return 'Wear SPF 30 and a hat';
     } else {
-      return 'Wear protection; stay out of the sun from 10 a.m. to 4 p.m.! Consider shade cloths for sensitive or newly transplanted plants';
+      return `
+        Wear protection; stay out of the sun from 10 a.m. to 4 p.m.!
+        Consider shade cloths for sensitive or newly transplanted plants
+      `;
     }
   }
 

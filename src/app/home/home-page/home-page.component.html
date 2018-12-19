@@ -34,8 +34,10 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
 <div class= tasksDiv>
   <div class= transBox>
 <h2>{{todaysDate | date: 'MMMM'}} Week {{week}} Garden Tasks:</h2>
-{{weeklyTip.month[1]}}
-  </div>
+
+<mat-checkbox class= taskCheckbox *ngFor="let weeklytip of weeklyTip"> {{weeklytip.description}}</mat-checkbox>
+
+</div>
 </div>
 
 </div>
@@ -43,18 +45,5 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
 <div class="slider-wrap">
 <p class= gardenQuotesDiv>{{gardenQuote}}</p>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-
-  <script>
-
-      $(document).ready(function(){
-        $('.slider-wrap').slick({
-        infinite: true,
-        slidesToShow: 1
-      });
-  });
-
-    </script>
 </body>
 </html>

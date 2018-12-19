@@ -63,3 +63,7 @@ div.tasksDiv{
   text-align: center;
   padding: 40px;
 }
+
+.mat-checkbox-frame{
+  border-color: rgba(0,0,0,.45);
+}

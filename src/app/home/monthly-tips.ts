@@ -1,8 +1,7 @@
-export const monthlyTips = [
+export const monthlyTips = {
   // put monthly tips data here
-  {
-    month: 'January',
-    weekOneTips: [{
+  'january': {
+    1: [{
         description: 'Happy new year! Make your gardening new year resolution!',
         done: false,
       },
@@ -20,7 +19,7 @@ export const monthlyTips = [
       },
 ],
 
-weekTwoTips: [{
+2: [{
   description: 'Review newly arriving seed and nursery catalogs.',
   done: false,
 },
@@ -41,7 +40,7 @@ weekTwoTips: [{
 },
 ],
 
-  weekThreeTips: [
+  3: [
     {
       description: 'Store wood ashes in a safe (fireproof) container for fertilizing or composting.',
       done: false,
@@ -55,7 +54,7 @@ weekTwoTips: [{
       done: false,
     },
   ],
-  weekFourTips: [
+  4: [
     {
       description: 'Prune tree limbs damaged by ice so as not to tear the bark',
       done: false,
@@ -71,98 +70,87 @@ weekTwoTips: [{
   ]
 },
 
-{
-month: 'February',
-weekOneTips: [],
-weekTwoTips: [],
-weekThreeTips: [],
-weekFourTips: [],
+'february': {
+1: [],
+2: [],
+3: [],
+4: [],
 },
 
 
-{
-  month: 'March',
-  weekOneTips: [],
-  weekTwoTips: [],
-  weekThreeTips: [],
-  weekFourTips: [],
+'march': {
+  1: [],
+  2: [],
+  3: [],
+  4: [],
   },
 
 
-  {
-    month: 'April',
-    weekOneTips: [],
-    weekTwoTips: [],
-    weekThreeTips: [],
-    weekFourTips: [],
+  'april': {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
     },
 
 
-{
-  month: 'May',
-  weekOneTips: [],
-  weekTwoTips: [],
-  weekThreeTips: [],
-  weekFourTips: [],
+'may': {
+  1: [],
+  2: [],
+  3: [],
+  4: [],
   },
 
-    {
-      month: 'June',
-      weekOneTips: [],
-      weekTwoTips: [],
-      weekThreeTips: [],
-      weekFourTips: [],
+    'june': {
+     1: [],
+      2: [],
+      3: [],
+      4: [],
       },
 
 
-      {
-        month: 'July',
-        weekOneTips: [],
-        weekTwoTips: [],
-        weekThreeTips: [],
-        weekFourTips: [],
+     'july': {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
         },
 
 
-        {
-          month: 'August',
-          weekOneTips: [],
-          weekTwoTips: [],
-          weekThreeTips: [],
-          weekFourTips: [],
+        'august': {
+          1: [],
+          2: [],
+          3: [],
+          4: [],
           },
 
 
-          {
-            month: 'September',
-            weekOneTips: [],
-            weekTwoTips: [],
-            weekThreeTips: [],
-            weekFourTips: [],
+          'september': {
+           1: [],
+           2: [],
+           3: [],
+           4: [],
             },
 
 
-            {
-              month: 'October',
-              weekOneTips: [],
-              weekTwoTips: [],
-              weekThreeTips: [],
-              weekFourTips: [],
+           'october': {
+              1: [],
+              2: [],
+              3: [],
+              4: [],
               },
 
 
-              {
-                month: 'November',
-                weekOneTips: [],
-                weekTwoTips: [],
-                weekThreeTips: [],
-                weekFourTips: [],
+              'november': {
+              1: [],
+              2: [],
+              3: [],
+              4: [],
                 },
 
 
-                {
-                  month: 'December',
-                  weekOneTips: [    {
+                'december': {
+                  1: [    {
                     description: 'Feed rabbits corn or alfalfa so they leave your fruit trees alone.',
                     done: false,
                   },
@@ -179,9 +167,9 @@ weekFourTips: [],
                     done: false,
                   },
                 ],
-                  weekTwoTips: [
+                  2: [
                     {
-                      description: 'Trim holly for holiday deorations.',
+                      description: 'Trim holly for holiday decorations.',
                       done: false,
                     },
                     {
@@ -193,7 +181,7 @@ weekFourTips: [],
                       done: false,
                     },
                   ],
-                  weekThreeTips: [
+                  3: [
                     {
                       description: 'Note if holly plants bear fruit- you need a male to pollinate the female plants.',
                       done: false, },
@@ -207,7 +195,7 @@ weekFourTips: [],
                       },
 
                   ],
-                  weekFourTips: [
+                  4: [
                     {
                       description: 'Have a happy holiday!',
                       done: false,
@@ -222,4 +210,4 @@ weekFourTips: [],
                     },
                   ],
                   },
-];
+                };
