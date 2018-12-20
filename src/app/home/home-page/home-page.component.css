@@ -1,3 +1,8 @@
+h2{
+color:hsl(0, 0%, 0%);
+text-align: center;
+}
+
 .intro{
   font-size: 16px;
   color:#485058;
@@ -9,46 +14,29 @@
   padding-top: 45px;
   padding-bottom: 45px;
 }
-.homeWrapper{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  border-bottom: 5px solid #FFFFFF;
-}
 
-div.weatherDiv{
-  width: 50%;
-  text-align: left;
-  padding: 20px;
-  /*background: url("/assets/images/rainy.jpg") no-repeat;*/
+.homeWrapper{
   background-color: rgb(123, 167, 142);
+  background: url("/assets/images/october.jpeg") no-repeat;
   background-size: cover;
   background-position: center center;
-  border-right-style: solid;
-  border-right-color: #FFFFFF;
-  border-right-width: 8px;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-div.transBox{
+
+.homeCard{
+  margin: 20px;
+  text-align:left;
+  width: 450px;
   background-color: #FFFFFF;
   padding: 30px;
   opacity: .8;
   filter: alpha(opacity=60);
-  height: 400px;
 }
 
-h2{
-color:hsl(0, 0%, 0%);
-text-align: center;
-}
-
-div.tasksDiv{
-  width: 50%;
-  text-align: left;
-  padding: 20px;
-  background: url("/assets/images/october.jpeg") no-repeat;
-  background-size: cover;
-  background-position: center center;
+#taskCheckbox{
+  padding-bottom: 80px;
 }
 .weatherData{
   line-height: 30px;
@@ -62,8 +50,4 @@ div.tasksDiv{
   font-size: 25px;
   text-align: center;
   padding: 40px;
-}
-
-.mat-checkbox-frame{
-  border-color: rgba(0,0,0,.45);
 }

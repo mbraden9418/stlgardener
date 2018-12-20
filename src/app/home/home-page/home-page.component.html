@@ -14,8 +14,7 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
 
 <div class= homeWrapper>
 
-<div class= weatherDiv>
-  <div class= transBox>
+<mat-card class=homeCard>
     <h2 >{{todaysDate | date: 'longDate'}} in your garden: </h2>
   <ul class=weatherData>
       <li class=currentWeatherInfo>
@@ -27,23 +26,24 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
      <li><span class= weatherInfoSpan> Next 7 days: </span>{{(weather | async )?.daily.summary }} </li>
      <li><span class= weatherInfoSpan> Moon Phase: </span>{{(weather | async )?.daily.data[0].moonPhase }} </li>
     </ul>
-  </div>
+</mat-card>
 
-</div>
-
-<div class= tasksDiv>
-  <div class= transBox>
+<mat-card class=homeCard>
 <h2>{{todaysDate | date: 'MMMM'}} Week {{week}} Garden Tasks:</h2>
 
-<mat-checkbox class= taskCheckbox *ngFor="let weeklytip of weeklyTip"> {{weeklytip.description}}</mat-checkbox>
+<div id= taskCheckbox>
+<mat-checkbox  *ngFor="let weeklytip of weeklyTip"> {{weeklytip.description}}
+</mat-checkbox>
+</div>
+
+</mat-card>
 
 </div>
-</div>
 
-</div>
 
 <div class="slider-wrap">
 <p class= gardenQuotesDiv>{{gardenQuote}}</p>
 </div>
+
 </body>
 </html>

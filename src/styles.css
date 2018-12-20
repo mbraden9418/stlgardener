@@ -4,3 +4,9 @@
 body{
   margin: 0px;
 }
+.mat-checkbox-layout {
+  white-space: normal !important;
+}
+.mat-checkbox-label {
+padding-bottom: 30px !important;
+}
