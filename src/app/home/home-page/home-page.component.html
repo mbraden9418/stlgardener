@@ -15,7 +15,8 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
 <div class= homeWrapper>
 
 <mat-card class=homeCard>
-    <h2 >{{todaysDate | date: 'longDate'}} in your garden: </h2>
+    <h2 >{{todaysDate | date: 'longDate'}} Outside: </h2>
+    <mat-divider></mat-divider>
   <ul class=weatherData>
       <li class=currentWeatherInfo>
         <span class= weatherInfoSpan>Currently:</span> {{(weather | async )?.currently.temperature}} &#8457;
@@ -24,17 +25,17 @@ Find out your plant hardiness zone on this <a href="https://planthardiness.ars.u
      <li><span class= weatherInfoSpan> Today's UV Index: </span>{{(weather | async )?.daily.data[0].uvIndex}}... {{uvAdvice((weather | async )?.daily.data[0].uvIndex)}} </li>
      <li><span class= weatherInfoSpan> Next 24 Hours: </span>{{(weather | async )?.hourly.summary}} </li>
      <li><span class= weatherInfoSpan> Next 7 days: </span>{{(weather | async )?.daily.summary }} </li>
-     <li><span class= weatherInfoSpan> Moon Phase: </span>{{(weather | async )?.daily.data[0].moonPhase }} </li>
+     <li><span class= weatherInfoSpan> Moon Phase: </span>{{(weather | async )?.daily.data[0].moonPhase }} : {{getMoonPhase((weather | async )?.daily.data[0].moonPhase)}}</li>
     </ul>
 </mat-card>
 
 <mat-card class=homeCard>
 <h2>{{todaysDate | date: 'MMMM'}} Week {{week}} Garden Tasks:</h2>
-
-<div id= taskCheckbox>
+<mat-divider class= cardDivider></mat-divider>
 <mat-checkbox  *ngFor="let weeklytip of weeklyTip"> {{weeklytip.description}}
+
 </mat-checkbox>
-</div>
+
 
 </mat-card>
 

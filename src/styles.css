@@ -8,5 +8,6 @@ body{
   white-space: normal !important;
 }
 .mat-checkbox-label {
-padding-bottom: 30px !important;
+padding: 10px !important;
 }
+

@@ -21,11 +21,10 @@ export class HomePageComponent implements OnInit {
   todaysDate = new Date();
 
   month =  this.monthNames[this.todaysDate.getMonth()];
+  week = Math.floor(this.todaysDate.getDate() / 8 ) + 1;
 
-  week = Math.floor(this.todaysDate.getDate() / 7 ) + 1 ;
 
   gardenQuote = gardenQuotes[Math.floor(Math.random() * gardenQuotes.length)];
-
   weeklyTip = monthlyTips[this.month][this.week];
 
   weather: Observable<Weather>;
@@ -60,6 +59,27 @@ export class HomePageComponent implements OnInit {
       `;
     }
   }
+
+  getMoonPhase(moonPhase: number) {
+    if (moonPhase < 0.1) {
+      return 'new moon';
+    } else if (moonPhase < 0.24) {
+      return 'waxing crescent';
+    } else if (moonPhase < 0.26) {
+    return 'first quarter';
+    } else if (moonPhase < 0.48) {
+    return 'waxing gibbous';
+    } else if (moonPhase < 0.52) {
+      return 'full moon';
+    } else if (moonPhase < 0.73) {
+      return 'waning gibbous';
+    } else if (moonPhase < 0.77) {
+      return 'last quarter';
+    } else {
+      return 'waning crescent';
+    }
+}
+
 
 }
 
